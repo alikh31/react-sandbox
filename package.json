@@ -4,7 +4,9 @@
   "description": "Simple and lightweight Boilerplate for ReactJS projects",
   "scripts": {
     "lint": "eslint src",
-    "start": "node server.js"
+    "start": "node server.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -38,10 +40,17 @@
     "sass-loader": "4.0.0",
     "style-loader": "0.13.1",
     "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1"
+    "webpack-dev-server": "1.14.1",
+    "@kadira/storybook": "^2.21.0"
   },
   "dependencies": {
-    "react": "15.2.1",
-    "react-dom": "15.2.1"
+    "pondjs": "^0.8.5",
+    "react": "15.3.1",
+    "react-addons-shallow-compare": "^15.5.2",
+    "react-blur": "^0.5.2",
+    "react-bootstrap": "^0.30.8",
+    "react-dom": "15.2.1",
+    "react-native-analog-clock": "^0.2.1",
+    "victory": "^0.19.0"
   }
 }
