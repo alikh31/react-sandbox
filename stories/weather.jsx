@@ -17,6 +17,7 @@ class Weather extends Component {
             if (o.condition)
             return (
               <div 
+                key={o.time}
                 className="card" 
                 style={{
                   width: '10rem', 

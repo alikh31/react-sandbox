@@ -12,6 +12,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/build/'
   },
+  debug: true,
   module: {
     loaders: [
       {
@@ -20,8 +21,13 @@ module.exports = {
         include: path.join(__dirname, 'src')
       },
       {
+        test: /\.jsx?$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'stories')
+      },
+      {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ['style', 'css', 'sass']
       }
     ]
   }

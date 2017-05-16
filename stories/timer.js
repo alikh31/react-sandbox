@@ -20,16 +20,27 @@ class Timer extends Component {
       time: (moment()).format(timeFmt),
       date: (moment()).format(dateFmt)
     }
-    setInterval(() => {
+    this.timer = setInterval(() => {
       this.setState({time: (moment()).format(timeFmt)})
       this.setState({date: (moment()).format(dateFmt)})
     }, 1000)
+  }
 
+  refreshStats() {
+    clearInterval(this.timer);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
   }
 
   render() {
     return(
-      <div>
+      <div style={{
+        'fontFamily': '"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif',
+        color: 'white',
+        'backgroundColor': '#19244c'
+      }}>
         <div style={dateStyle}>{this.state.date}</div>
         <br/>
         <div style={timeStyle}>{this.state.time}</div>

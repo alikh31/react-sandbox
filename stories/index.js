@@ -1,24 +1,28 @@
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Button from './Button';
-import Welcome from './Welcome';
+import { storiesOf } from '@kadira/storybook';
 import Timer from './timer';
-
-storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')}/>
-  ));
-
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-  ));
+import Weather from './weather';
+import Graph from './graph';
+import AnalogueClock from './analogueClock';
+require('../styles/application.scss')
 
 storiesOf('Timer', module)
   .add('just plane', () => (
     <Timer/>
+  ))
+
+storiesOf('Weather', module)
+  .add('just plane', () => (
+    <Weather/>
+  ))
+
+storiesOf('Graph', module)
+  .add('just plane', () => (
+    <Graph/>
+  ))
+
+storiesOf('AnalogueClock', module)
+  .add('just plane', () => (
+    <AnalogueClock/>
   ))
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Timer from './timer.jsx'
-import Weather from './weather.jsx'
+import Timer from '../stories/timer.js'
+import Weather from '../stories/weather.jsx'
 
 class App extends Component {
   constructor() {

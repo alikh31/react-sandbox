@@ -1,18 +1,11 @@
-// you can use this file to add your custom webpack plugins, loaders and anything you like.
-// This is just the basic way to add addional webpack configurations.
-// For more information refer the docs: https://getstorybook.io/docs/configurations/custom-webpack-config
+const path = require('path');
 
-// IMPORTANT
-// When you add this file, we won't add the default configurations which is similar
-// to "React Create App". This only has babel loader to load JavaScript.
-
-module.exports = {
-  plugins: [
-    // your custom plugins
-  ],
-  module: {
-    loaders: [
-      // add your custom loaders.
-    ],
-  },
+module.exports = function(storybookBaseConfig, configType) {
+  storybookBaseConfig.module.loaders.push({
+    test: /\.scss$/,
+    loaders: ["style", "css", "sass"],
+    include: path.resolve(__dirname, '../styles'),
+  });
+  
+  return storybookBaseConfig;
 };
